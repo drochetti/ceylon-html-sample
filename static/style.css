@@ -1,0 +1,24 @@
+
+@media ( min-width : 980px) {
+	body {
+		padding-top: 70px;
+		padding-bottom: 40px;
+	}
+}
+
+body + section:first-child {
+	margin: 20px 0;
+}
+
+#content h1 i.fa-html5 {
+	color: #f16528;
+}
+
+#content .affix {
+	width: 263px;
+	top: 30px;
+}
+
+#side-menu ul {
+	margin-top: 40px;
+}
