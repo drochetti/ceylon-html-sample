@@ -1,2 +1,6 @@
 /classes
 /modules
+/.ceylon
+/.settings
+/.classpath
+/.project

@@ -6,6 +6,7 @@ import sample.ceylon.html.bootstrap {
     Icon,
     Modal, Pagination
 }
+import sample.ceylon.html.data { developers }
 
 Modal infoModal = Modal {
     title = "";
@@ -148,6 +149,8 @@ shared Html index = Html {
                             //P("This is the ``Ins("ins")`` element."),
                             //P("This is the ``Kbd("kbd")`` element."),
                             //P("This is the ``Mark("mark")`` element.")
+                            P("This is the ``Q("q")`` element."),
+                            P("This is the ``S("s")`` element."),
                             P("This is the ``Samp("samp")`` element."),
                             P("This is the ``Small("small")`` element."),
                             P("This is the ``Strong("strong")`` element."),
@@ -172,9 +175,12 @@ shared Html index = Html {
                                     Th("Name"),
                                     Th("Value")
                                 };
-                                rows = {
-                                    
-                                };
+                                for (i->developer in developers.core.indexed)
+                                    Tr {
+                                        Td(i.string),
+                                        Td(developer.name),
+                                        Td(developer.url else "N/A")
+                                    }
                             },
                             Pagination(1..4)
                         },
@@ -198,7 +204,9 @@ shared Html index = Html {
 
             },
 
-            infoModal
+            infoModal,
+
+            P { "Powered by Ceylon ``language.version``"; }
 
         },
 
